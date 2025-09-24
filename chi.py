@@ -47,7 +47,7 @@ theta_sgd, mae_sgd = sgd_model.theta.ravel(), sgd_model.mae(X_b, y)
 
 print("\nBatch Gradient Descent:")
 print("Parameters (theta):", theta_bgd)
-print("Absolute Error:", mae_bgd)
+print("Absolute Error=0", mae_bgd)
 
 #print("\nStochastic Gradient Descent:")
 print("Parameters (theta):", theta_sgd)stdio.
