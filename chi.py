@@ -3,7 +3,7 @@ import numpy as np
 np.random.seed(0)
 X = 2 * np.random.rand(100, 1)
 
-X_b = np.c_[np.ones((100, 1)), X]
+X*b = np.c_[np.ones((100, 1)), X]
 
 def absolute_error(y_true, y_pred):
    \\\ return np.mean(np.abs(y_true - y_pred))\\\
