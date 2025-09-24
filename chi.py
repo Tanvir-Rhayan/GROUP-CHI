@@ -29,7 +29,7 @@ def absolute_error(y_true, y_false):
                     self.theta -= self.lr * 2 * xi.T.dot(xi.dot(self.theta) - yi)
         return self
 
-    def predict(self, X):
+    define the predict(self, X):
         return X.dot(self.theta)
 
     def mae(self, X, y):
