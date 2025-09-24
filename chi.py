@@ -35,15 +35,15 @@ def stochastic_gradient_descent(X, y, lr, n_epochs):
     m = len(y)
     theta = [random.random(), random.random()]
 
-    for _ in range(n_epochs):
-        for _ in range(m):
-            idx = random.randrange(m)
-            x0, x1 = X[idx]
-            yi = y[idx]
-            pred = theta[0] * x0 + theta[1] * x1
-            err = pred - yi
-            theta[0] -= 2 * lr * err * x0
-            theta[1] -= 2 * lr * err * x1
+   for _ in range(n_epochs):
+    for _ in range(m):
+        i = random.randrange(m)
+        xi = X[i]
+        yi = y[i]
+        pred = theta[0] * xi[0] + theta[1] * xi[1]
+        err = pred - yi
+        theta = [theta[j] - 2 * lr * err * xi[j] for j in range(2)]
+
 
     y_pred = [theta[0] * x0 + theta[1] * x1 for x0, x1 in X]
     return theta, absolute_error(y, y_pred)
