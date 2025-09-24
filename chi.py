@@ -5,7 +5,7 @@ X = 2 * np.random.rand(100, 1)
 
 X*b = np.c_[np.ones((100, 1)), X]
 
-def absolute_error(y_true, y_pred):
+def absolute_error(y_true, y_false):
    \\\ return np.mean(np.abs(y_true - y_pred))\\\
 
 #header point -class Linear RegressionGD:
