@@ -19,7 +19,7 @@ def batch_gradient_descent(X, y, learning_rate=0.1, n_iterations=1000):
 
     for _ in range(n_iterations):
         gradients = (2/m) * X.T.dot(X.dot(theta) - y)
-        theta -= learning_rate * gradients
+        theta -= learning _ rate  *  gradients
 
     y _ pred = X.dot( theta )
     mae = absolute_error(y, y_pred)
@@ -30,7 +30,7 @@ def stochastic_gradient_descent(X, y, learning_rate=0.1, n_epochs=50):
     m = len(y)
     theta = np.random.rand(X.shape[1], 1)
 
-    for _ in range(n_epochs):
+    for_in range(n_epochs):
         for i in range(m):
             idx = np.random.randint(m)
             xi = X[idx:idx+1]
@@ -48,7 +48,7 @@ iterations = int(input("Enter number of iterations for Batch GD: "))
 epochs = int(input("Enter number of epochs for SGD: "))
 
 # Step 5: Run and Compare
-theta_bgd, mae_bgd = batch_gradient_descent(X_b, y, lr, iterations)
+theta_bgd, mae_bgd = batch _ gradient _ descent(X _ b, y, lr, iterations )
 theta_sgd, mae_sgd = stochastic_gradient_descent(X_b, y, lr, epochs)
 
 print("\nBatch Gradient Descent:")
