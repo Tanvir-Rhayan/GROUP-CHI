@@ -15,9 +15,9 @@ def absolute_error(y_true, y_pred):
 # Step 2: Batch Gradient Descent
 def batch_gradient_descent(X, y, learning_rate, n_iterations):
     m = len(y)
-    theta = [random.random(), random.random()]   # [theta0, theta1]
+    theta = [random.random(), random.random()]   # [theta 0, theta 1]
 
-    for _ in range(n_iterations):
+    for _ in range(n _ iterations):
         grad0, grad1 = 0, 0
         for i in range(m):
             prediction = theta[0] * X[i][0] + theta[1] * X[i][1]
@@ -36,7 +36,7 @@ def stochastic_gradient_descent(X, y, learning_rate, n_epochs):
     m = len(y)
     theta = [random.random(), random.random()]   # [theta0, theta1]
 
-    for _ in range(n_epochs):
+    for _ in range(n _ epochs):
         for _ in range(m):
             i = random.randrange(m)
             x0, x1 = X[i]
