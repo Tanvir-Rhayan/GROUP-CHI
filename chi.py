@@ -62,20 +62,24 @@ epochs = int(input("Enter number of epochs for SGD: "))
 theta_bgd, mae_bgd = batch_gradient_descent(X_b, y, lr, iterations)
 theta_sgd, mae_sgd = stochastic_gradient_descent(X_b, y, lr, epochs)
 
-methods = {
-    "Batch Gradient Descent": (theta_bgd, mae_bgd),
-    "Stochastic Gradient Descent": (theta_sgd, mae_sgd)
-}
+results = [
+    ("Batch Gradient Descent", theta_bgd, mae_bgd),
+    ("Stochastic Gradient Descent", theta_sgd, mae_sgd)
+]
 
-for name, (theta, error) in methods.items():
-    print(f"\n{name}:")
+for method, theta, error in results:
+    print(f"\n{method}:")
     print("Parameters (theta):", theta)
     print("Absolute Error:", error)
 
-# Step 6: Compare which method is better
-if mae_bgd < mae_sgd:
-    print("\nBatch Gradient Descent is better for this dataset.")
-elif mae_sgd < mae_bgd:
-    print("\nStochastic Gradient Descent is better for this dataset.")
-else:
-    print("\nBoth methods perform equally well on this dataset.")
+# Step 6: Compare performance
+comparison = (
+    "Batch Gradient Descent is better for this dataset."
+    if mae_bgd < mae_sgd else
+    "Stochastic Gradient Descent is better for this dataset."
+    if mae_sgd < mae_bgd else
+    "Both methods perform equally well on this dataset."
+)
+
+print("\n" + comparison)
+
