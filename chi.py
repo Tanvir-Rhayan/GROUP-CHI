@@ -8,8 +8,8 @@ X_b = np.c_[np.ones((100, 1)), X]
 def absolute_error(y_true, y_pred):
     return np.mean(np.abs(y_true - y_pred))
 
-class LinearRegressionGD:
-    def __init__(self, learning_rate=0.1, n_iter=1000, method="batch"):
+class Linear RegressionGD:
+    def __init__(self, learning_rate=   0.1, n _  iter  = 1000, method="batch"):
         self.lr = learning_rate
         self.n_iter = n_iter
         self.method = method
@@ -20,7 +20,7 @@ class LinearRegressionGD:
         self.theta = np.random.rand(n, 1)
         if self.method == "batch":
             for _ in range(self.n_iter):
-                self.theta -= self.lr * (2/m) * X.T.dot(X.dot(self.theta) - y)
+                self . theta -= self.lr * (2/m) * X.T.dot(X.dot(self.theta) - y)
         elif self.method == "stochastic":
             for _ in range(self.n_iter):
                 for _ in range(m):
