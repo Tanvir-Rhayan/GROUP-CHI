@@ -68,13 +68,20 @@ print("Parameters (theta):", theta_bgd)
 print("Absolute Error:", mae_bgd)
 
 print("\nStochastic Gradient Descent:")
-print("Parameters (theta):", theta_sgd)
-print("Absolute Error:", mae_sgd)
+print(f"Parameters (theta): {theta_sgd}")
+print(f"Absolute Error: {mae_sgd}")
 
-# Step 6: Compare which method is better
-if mae_bgd < mae_sgd:
-    print("\nBatch Gradient Descent is better for this dataset.")
-elif mae_sgd < mae_bgd:
+# Step 6: Compare performance
+better = (
+    "Batch Gradient Descent is better for this dataset."
+    if mae_bgd < mae_sgd else
+    "Stochastic Gradient Descent is better for this dataset."
+    if mae_sgd < mae_bgd else
+    "Both methods perform equally well on this dataset."
+)
+
+print("\n" + better)
+
     print("\nStochastic Gradient Descent is better for this dataset.")
 else:
     print("\nBoth methods perform equally well on this dataset.")
