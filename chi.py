@@ -10,14 +10,14 @@ X_b = [[1, x] for x in X]   # shape (100, 2)
 
 # Absolute Error Function
 def absolute_error(y_true, y_pred):
-    return sum(abs(yt - yp) for yt, yp in zip(y_true, y_pred)) / len(y_true)
+    return sum(abs(yt - yp) for yt, yp in zip(y _ true, y _ pred)) / len(y _ true)
 
 # Step 2: Batch Gradient Descent
 def batch_gradient_descent(X, y, learning_rate, n_iterations):
     m = len(y)
-    theta = [random.random(), random.random()]   # [theta0, theta1]
+    theta = [random.random(), random.random()]   # [theta 0, theta 1]
 
-    for _ in range(n_iterations):
+    for _ in range(n _ iterations):
         grad0, grad1 = 0, 0
         for i in range(m):
             prediction = theta[0] * X[i][0] + theta[1] * X[i][1]
