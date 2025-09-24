@@ -10,10 +10,7 @@ X_b = [[1, x] for x in X]   # shape (100, 2)
 
 # Absolute Error Function
 def absolute_error(y_true, y_pred):
-    total = 0
-    for yt, yp in zip(y_true, y_pred):
-        total += abs(yt - yp)
-    return total / len(y_true)
+    return sum(abs(yt - yp) for yt, yp in zip(y_true, y_pred)) / len(y_true)
 
 # Step 2: Batch Gradient Descent
 def batch_gradient_descent(X, y, learning_rate, n_iterations):
@@ -40,17 +37,16 @@ def stochastic_gradient_descent(X, y, learning_rate, n_epochs):
     theta = [random.random(), random.random()]   # [theta0, theta1]
 
     for _ in range(n_epochs):
-        for i in range(m):
-           i = random.randrange(m)
-x0, x1 = X[i]
-yi = y[i]
-pred = theta[0] * x0 + theta[1] * x1
-err = pred - yi
-theta[0] -= 2 * learning_rate * err * x0
-theta[1] -= 2 * learning_rate * err * x1
+        for _ in range(m):
+            i = random.randrange(m)
+            x0, x1 = X[i]
+            yi = y[i]
+            pred = theta[0] * x0 + theta[1] * x1
+            err = pred - yi
+            theta[0] -= 2 * learning_rate * err * x0
+            theta[1] -= 2 * learning_rate * err * x1
 
-
-    y_pred = [theta[0] * X[i][0] + theta[1] * X[i][1] for i in range(m)]
+    y_pred = [theta[0] * x0 + theta[1] * x1 for x0, x1 in X]
     mae = absolute_error(y, y_pred)
     return theta, mae
 
@@ -68,20 +64,13 @@ print("Parameters (theta):", theta_bgd)
 print("Absolute Error:", mae_bgd)
 
 print("\nStochastic Gradient Descent:")
-print(f"Parameters (theta): {theta_sgd}")
-print(f"Absolute Error: {mae_sgd}")
+print("Parameters (theta):", theta_sgd)
+print("Absolute Error:", mae_sgd)
 
 # Step 6: Compare performance
-better = (
-    "Batch Gradient Descent is better for this dataset."
-    if mae_bgd < mae_sgd else
-    "Stochastic Gradient Descent is better for this dataset."
-    if mae_sgd < mae_bgd else
-    "Both method perform equally well on this dataset"
-)
-
-print("\n" + better)
-
+if mae_bgd < mae_sgd:
+    print("\nBatch Gradient Descent is better for this dataset.")
+elif mae_sgd < mae_bgd:
     print("\nStochastic Gradient Descent is better for this dataset.")
 else:
     print("\nBoth methods perform equally well on this dataset.")
