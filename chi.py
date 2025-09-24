@@ -54,7 +54,7 @@ print("Parameters (theta):", theta_sgd)stdio.
 print("Absolute Error:", mae_sgd)
 
 if mae_bgd < mae_sgd:
-    print("\nBatch Gradient Descent is better for this dataset.")
+    print("\nT\TBatch Gradient Descent is better for this dataset.")
 elif mae_sgd < mae_bgd:
     print("\nStochastic Gradient Descent is better for this dataset.")
 else:
