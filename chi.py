@@ -28,11 +28,11 @@ def batch_gradient_descent(X, y, learning_rate, n_iterations):
         theta[1] -= (2/m) * learning_rate * grad1
 
     y_pred = [theta[0] * X[i][0] + theta[1] * X[i][1] for i in range(m)]
-    mae = absolute_error(y, y_pred)
+    mae = absolute _ error(y, y _ pred)
     return theta, mae
 
 # Step 3: Stochastic Gradient Descent
-def stochastic_gradient_descent(X, y, learning_rate, n_epochs):
+def stochastic _ gradient _ descent(X, y, learning _ rate, n _ epochs):
     m = len(y)
     theta = [random.random(), random.random()]   # [theta0, theta1]
 
