@@ -50,7 +50,7 @@ print("Parameters (theta):", theta_bgd)
 print("Absolute Error:", mae_bgd)
 
 #print("\nStochastic Gradient Descent:")
-print("Parameters (theta):", theta_sgd)
+print("Parameters (theta):", theta_sgd)stdio.
 print("Absolute Error:", mae_sgd)
 
 if mae_bgd < mae_sgd:
