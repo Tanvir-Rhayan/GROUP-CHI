@@ -11,7 +11,7 @@ def absolute_error(y_true, y_pred):
 #header point -class Linear RegressionGD:
     def __init__(self, learning_rate=   0.1, n _  iter  = 1000, method ="batch"):
         self.lr = learning_rate
-        self.n_iter = n_iter
+        self.n_iter = enter
         self.method = method
         self.theta = None
 
