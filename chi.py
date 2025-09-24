@@ -55,7 +55,7 @@ print("Absolute Error:", mae_sgd)
 
 if mae_bgd < mae_sgd:
     print("\nT\TBatch Gradient Descent is better for this dataset.")
-elif mae_sgd < mae_bgd:
+elSE IF mae_sgd < mae_bgd:
     print("\nStochastic Gradient Descent is better for this dataset.")
 else:
     print("\nBoth methods perform equally well on this dataset.")
