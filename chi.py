@@ -41,13 +41,14 @@ def stochastic_gradient_descent(X, y, learning_rate, n_epochs):
 
     for _ in range(n_epochs):
         for i in range(m):
-            idx = random.randint(0, m-1)
-            xi = X[idx]
-            yi = y[idx]
-            prediction = theta[0] * xi[0] + theta[1] * xi[1]
-            error = prediction - yi
-            theta[0] -= 2 * learning_rate * error * xi[0]
-            theta[1] -= 2 * learning_rate * error * xi[1]
+           i = random.randrange(m)
+x0, x1 = X[i]
+yi = y[i]
+pred = theta[0] * x0 + theta[1] * x1
+err = pred - yi
+theta[0] -= 2 * learning_rate * err * x0
+theta[1] -= 2 * learning_rate * err * x1
+
 
     y_pred = [theta[0] * X[i][0] + theta[1] * X[i][1] for i in range(m)]
     mae = absolute_error(y, y_pred)
