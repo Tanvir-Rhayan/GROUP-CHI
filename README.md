@@ -17,45 +17,117 @@
 
 ## Project Topic
 
-Implement and explain **Stochastic Gradient Descent (SGD)** and **Batch Gradient Descent (BGD)** for Linear Regression. Compare convergence speed and performance on a dataset (synthetic or real).
+Implement and explain **Stochastic Gradient Descent (SGD)** and **Batch Gradient Descent (BGD)** for **Linear Regression**, and compare their **convergence speed, accuracy, and performance** on a dataset (synthetic or real).  
 
 This project demonstrates the implementation of **Linear Regression** using two types of gradient descent:
 
-- **Batch Gradient Descent (BGD):** Updates parameters using all training samples at once.  
-- **Stochastic Gradient Descent (SGD):** Updates parameters one sample at a time, converging faster but with small fluctuations.
+- **Batch Gradient Descent (BGD):** Updates parameters using all training samples at once. Produces smooth and stable convergence but can be slow for large datasets.  
+- **Stochastic Gradient Descent (SGD):** Updates parameters **one sample at a time**, converging faster but with fluctuations near the minimum. Suitable for large datasets or streaming data.
 
 ---
 
 ## Objective
 
-- Understand the difference between **BGD** and **SGD** for optimizing linear regression.  
+- Understand the difference between **BGD** and **SGD** for linear regression optimization.  
 - Compare **convergence speed** and **accuracy** for both methods.  
-- Implement both methods in **pure Python** (no external libraries required).  
-- Calculate and analyze the **Mean Absolute Error (MAE)** for model evaluation.
+- Implement both methods in **pure Python**, without external libraries.  
+- Calculate and analyze **Mean Absolute Error (MAE)** and other error metrics.  
+- Visualize convergence and parameter updates with **graphs**.
+
+---
+
+## About Linear Regression
+
+**Linear Regression** is a supervised learning algorithm that predicts continuous values.  
+It fits a line through data points using the equation:
+
+\[
+y = \theta_0 + \theta_1 x
+\]
+
+Where:  
+- $\theta_0$ is the intercept  
+- $\theta_1$ is the slope  
+- $x$ is the input feature  
+- $y$ is the predicted output  
+
+**Goal:** Minimize the difference between predicted and actual values using a **cost function**:
+
+\[
+J(\theta) = \frac{1}{2m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2
+\]
+
+**Image: Linear Regression Overview**  
+![Linear Regression Overview](2.webp)
+
+---
+
+## Gradient Descent
+
+Gradient Descent is an optimization technique used to minimize the cost function **iteratively**:
+
+\[
+\theta := \theta - \alpha \nabla J(\theta)
+\]
+
+Where $\alpha$ is the **learning rate**, controlling the step size.  
+
+### Types of Gradient Descent:
+
+1. **Batch Gradient Descent (BGD)** – uses the full dataset per iteration.  
+2. **Stochastic Gradient Descent (SGD)** – updates parameters per sample.  
+3. **Mini-Batch Gradient Descent** – updates parameters using small subsets.
+
+**Image: Gradient Descent Overview**  
+![BGD vs SGD Overview](2.webp)
 
 ---
 
 ## About the Code
 
-The Python code (`linear_regression_gd.py`) is designed to be **beginner-friendly**. Key features include:
+The Python script `linear_regression_gd.py` is structured for clarity and learning:
 
-1. **Synthetic Dataset:** Generates 100 random samples `(x, y)` following a linear relationship `y = 4 + 3x + noise`.  
-2. **Parameter Initialization:** θ0 and θ1 are initialized randomly.  
-3. **Batch Gradient Descent:**  
+1. **Synthetic Dataset:** Generates 100 random samples `(x, y)` with linear relation `y = 4 + 3x + noise`.  
+2. **Parameter Initialization:** Random initial values for $\theta_0$ and $\theta_1$.  
+3. **Batch Gradient Descent (BGD):**  
    - Updates parameters using **all samples per iteration**.  
    - Computes **Mean Absolute Error (MAE)** after training.  
-4. **Stochastic Gradient Descent:**  
-   - Updates parameters **one random sample at a time** per epoch.  
+   - Produces smooth convergence.  
+4. **Stochastic Gradient Descent (SGD):**  
+   - Updates parameters **one sample at a time per epoch**.  
    - Computes **Mean Absolute Error (MAE)** after training.  
-5. **Comparison:** Compares the **MAE** of BGD and SGD and prints which method performs better on the dataset.
+   - Faster early convergence but fluctuates near minimum.  
+5. **Comparison:** Displays convergence graphs and MAE for BGD and SGD.
+
+**Error Visualization**  
+![Linear Regression Error](linear_regression-error.png)
 
 ---
 
 ## Key Functions
 
 - `absolute_error(y_true, y_pred)`: Computes **Mean Absolute Error (MAE)**.  
-- `batch_gradient_descent(X, y, learning_rate, n_iterations)`: Implements **Batch Gradient Descent**.  
-- `stochastic_gradient_descent(X, y, learning_rate, n_epochs)`: Implements **Stochastic Gradient Descent**.  
+- `batch_gradient_descent(X, y, learning_rate, n_iterations)`: Implements **BGD**.  
+- `stochastic_gradient_descent(X, y, learning_rate, n_epochs)`: Implements **SGD**.  
+
+---
+
+## Convergence Analysis
+
+- **BGD**:  
+  - Smooth, stable cost decrease  
+  - Predictable parameter updates  
+  - Slower on large datasets
+
+- **SGD**:  
+  - Fast initial convergence  
+  - Noisy updates  
+  - Efficient for large datasets and streaming data
+
+**Graphs** visualize the trade-offs between speed and stability:
+
+- **Cost vs Iterations**  
+- **Parameter (θ0, θ1) convergence**  
 
 ---
 
