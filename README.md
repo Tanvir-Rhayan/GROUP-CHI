@@ -78,37 +78,50 @@ Where $\alpha$ is the **learning rate**, controlling the step size.
 2. **Stochastic Gradient Descent (SGD)** – updates parameters per sample.  
 3. **Mini-Batch Gradient Descent** – updates parameters using small subsets.
 
-**Image: Gradient Descent Overview**  
-![BGD vs SGD Overview](2.webp)
-
 ---
 
 ## About the Code
 
-The Python script `linear_regression_gd.py` is structured for clarity and learning:
+The Python script `linear_regression_gd.py` is **well-structured and beginner-friendly**.  
 
-1. **Synthetic Dataset:** Generates 100 random samples `(x, y)` with linear relation `y = 4 + 3x + noise`.  
-2. **Parameter Initialization:** Random initial values for $\theta_0$ and $\theta_1$.  
-3. **Batch Gradient Descent (BGD):**  
+### Key Features:
+
+1. **Synthetic Dataset Generation**: 100 random samples `(x, y)` following `y = 4 + 3x + noise`.  
+2. **Parameter Initialization**: Random starting values for θ0 and θ1.  
+3. **Batch Gradient Descent (BGD)**:  
    - Updates parameters using **all samples per iteration**.  
    - Computes **Mean Absolute Error (MAE)** after training.  
-   - Produces smooth convergence.  
-4. **Stochastic Gradient Descent (SGD):**  
+   - Produces **smooth and stable convergence**.  
+4. **Stochastic Gradient Descent (SGD)**:  
    - Updates parameters **one sample at a time per epoch**.  
-   - Computes **Mean Absolute Error (MAE)** after training.  
-   - Faster early convergence but fluctuates near minimum.  
-5. **Comparison:** Displays convergence graphs and MAE for BGD and SGD.
+   - Computes **Mean Absolute Error (MAE)**.  
+   - Faster early convergence but shows **fluctuations near the minimum**.  
+5. **Comparison & Visualization**:  
+   - Plots **cost vs iterations** and **parameter (θ0, θ1) convergence** graphs.  
+   - Helps visualize differences between BGD and SGD.  
 
 **Error Visualization**  
 ![Linear Regression Error](linear_regression-error.png)
 
 ---
 
-## Key Functions
+## Algorithm Explanation
 
-- `absolute_error(y_true, y_pred)`: Computes **Mean Absolute Error (MAE)**.  
-- `batch_gradient_descent(X, y, learning_rate, n_iterations)`: Implements **BGD**.  
-- `stochastic_gradient_descent(X, y, learning_rate, n_epochs)`: Implements **SGD**.  
+### Batch Gradient Descent (BGD):
+
+- Uses the **entire dataset** to calculate gradient each iteration.  
+- **Advantages**: Stable updates, predictable convergence.  
+- **Disadvantages**: Slow for large datasets, high memory usage.  
+- **Time Complexity**: O(n * m) per iteration (n = iterations, m = samples)  
+- **Space Complexity**: O(m) for storing the dataset and gradients  
+
+### Stochastic Gradient Descent (SGD):
+
+- Uses **one random sample** per iteration.  
+- **Advantages**: Fast updates, memory efficient, suitable for online learning.  
+- **Disadvantages**: Noisy convergence, may oscillate around minimum.  
+- **Time Complexity**: O(n * 1) per sample per iteration → faster than BGD for large datasets  
+- **Space Complexity**: O(1) per sample  
 
 ---
 
@@ -124,10 +137,19 @@ The Python script `linear_regression_gd.py` is structured for clarity and learni
   - Noisy updates  
   - Efficient for large datasets and streaming data
 
-**Graphs** visualize the trade-offs between speed and stability:
+**Graphs** visualize the trade-offs between speed and stability:  
 
 - **Cost vs Iterations**  
-- **Parameter (θ0, θ1) convergence**  
+- **Parameter Convergence (θ0, θ1)**  
+
+---
+
+## Key Points of the Implementation
+
+- Pure Python implementation – easy to understand for beginners  
+- Demonstrates practical differences between **BGD and SGD**  
+- Includes **graphical visualization** for better interpretation  
+- Computes **error metrics** for model evaluation  
 
 ---
 
