@@ -1,13 +1,14 @@
 # Linear Regression using Batch Gradient Descent and Stochastic Gradient Descent
 
 **Group Number:** χ  
+
 **Group Members:**  
 - Mst. Maris Islam - 2024000000012  
 - Tanvir Rahyan Shayem - 2024000000035  
-- M1  -
-- M2  -
-- M3  - 
-- M4  -
+- Md. Monjurul Haque Moni - 2024000000038  
+- Saykat Kumar Modak - 2023200000380  
+- Niaj Mahamud - 2023200000289  
+- Md. Golam Saroare Shuvo - 2022000000045  
 
 **Submitted To:**  
 [TMD] Tashreef Muhammad, Lecturer, Dept. of CSE, Southeast University, Bangladesh  
@@ -16,7 +17,7 @@
 
 ## Project Topic
 
-**Implement and explain Stochastic Gradient Descent (SGD) and Batch Gradient Descent (BGD) for Linear Regression. Compare convergence speed and performance on a dataset (synthetic or real).**
+Implement and explain **Stochastic Gradient Descent (SGD)** and **Batch Gradient Descent (BGD)** for Linear Regression. Compare convergence speed and performance on a dataset (synthetic or real).
 
 This project demonstrates the implementation of **Linear Regression** using two types of gradient descent:
 
@@ -27,10 +28,10 @@ This project demonstrates the implementation of **Linear Regression** using two 
 
 ## Objective
 
-- Learn the difference between BGD and SGD for optimizing linear regression.  
+- Understand the difference between **BGD** and **SGD** for optimizing linear regression.  
 - Compare **convergence speed** and **accuracy** for both methods.  
 - Implement both methods in **pure Python** (no external libraries required).  
-- Calculate and analyze the **Absolute Error (MAE)** for model evaluation.
+- Calculate and analyze the **Mean Absolute Error (MAE)** for model evaluation.
 
 ---
 
@@ -42,16 +43,24 @@ The Python code (`linear_regression_gd.py`) is designed to be **beginner-friendl
 2. **Parameter Initialization:** θ0 and θ1 are initialized randomly.  
 3. **Batch Gradient Descent:**  
    - Updates parameters using **all samples per iteration**.  
-   - Computes **Absolute Error (MAE)** after training.  
+   - Computes **Mean Absolute Error (MAE)** after training.  
 4. **Stochastic Gradient Descent:**  
    - Updates parameters **one random sample at a time** per epoch.  
-   - Computes **Absolute Error (MAE)** after training.  
-5. **Comparison:** The program compares the **MAE** of BGD and SGD and prints which method performs better on the dataset.
+   - Computes **Mean Absolute Error (MAE)** after training.  
+5. **Comparison:** Compares the **MAE** of BGD and SGD and prints which method performs better on the dataset.
 
-**Key Functions:**
+---
 
-- `absolute_error(y_true, y_pred)`: Computes mean absolute error.  
-- `batch_gradient_descent(X, y, learning_rate, n_iterations)`: Implements BGD.  
-- `stochastic_gradient_descent(X, y, learning_rate, n_epochs)`: Implements SGD.  
+## Key Functions
 
+- `absolute_error(y_true, y_pred)`: Computes **Mean Absolute Error (MAE)**.  
+- `batch_gradient_descent(X, y, learning_rate, n_iterations)`: Implements **Batch Gradient Descent**.  
+- `stochastic_gradient_descent(X, y, learning_rate, n_epochs)`: Implements **Stochastic Gradient Descent**.  
 
+---
+
+## How to Run
+
+1. Clone the repository:  
+```bash
+git clone <your-repo-url>
