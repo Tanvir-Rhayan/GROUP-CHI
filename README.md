@@ -57,12 +57,4 @@ The Python code (`linear_regression_gd.py`) is designed to be **beginner-friendl
 - `batch_gradient_descent(X, y, learning_rate, n_iterations)`: Implements BGD.  
 - `stochastic_gradient_descent(X, y, learning_rate, n_epochs)`: Implements SGD.  
 
----
 
-## How to Run
-
-1. Clone the repository:
-
-```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
