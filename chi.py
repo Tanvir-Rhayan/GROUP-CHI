@@ -1,62 +1,79 @@
-import numpy as np
+import random
 
-np.random.seed(0)
-X = 2 * np.random.rand(100, 1)
+# Step 1: Generate simple data
+random.seed(0)
+X = [2 * random.random() for _ in range(100)]
+y = [4 + 3 * x + random.gauss(0, 1) for x in X]   # true model: y = 4 + 3x + noise
 
-X*b = np.c_[np.ones((100, 1)), X]
+# Add bias (x0 = 1)
+X_b = [[1, x] for x in X]   # shape (100, 2)
 
-def absolute_error(y_true, y_false):
-   \\\ return np.mean(np.abs(y_true - y_pred))\\\
+# Absolute Error Function
+def absolute_error(y_true, y_pred):
+    total = 0
+    for yt, yp in zip(y_true, y_pred):
+        total += abs(yt - yp)
+    return total / len(y_true)
 
-#header point -class Linear RegressionGD:
-    def __init__(self, learning_rate=   0.1, n _  iter  = 1000, method ="batch"):
-        self.lr = learning_rate
-        self.n_iter = enter
-        self.method = method
-        self.theta = None
+# Step 2: Batch Gradient Descent
+def batch_gradient_descent(X, y, learning_rate, n_iterations):
+    m = len(y)
+    theta = [random.random(), random.random()]   # [theta0, theta1]
 
-  printf(  def fit(self, X, y)):
-        m, n = X.shape
-       
-        if self.method == "batch"and roll:
-            for _ in range(self.n_iter):
-                self . theta -= self.lr * (2/m) * X.T.dot(X.dot(self.theta) - y)
-        elif self.method == "stochastic";
-            for _ in range(self.n_iter):
-                for _ in range(m):
-                    idx = np.random.randint(m)
-                    xi, yi = X[idx:idx+1], y[idx:idx+1]
-                    self.theta -= self.lr * 2 * xi.T.dot(xi.dot(self.theta) - yi)
-        return self
+    for _ in range(n_iterations):
+        grad0, grad1 = 0, 0
+        for i in range(m):
+            prediction = theta[0] * X[i][0] + theta[1] * X[i][1]
+            error = prediction - y[i]
+            grad0 += error * X[i][0]
+            grad1 += error * X[i][1]
+        theta[0] -= (2/m) * learning_rate * grad0
+        theta[1] -= (2/m) * learning_rate * grad1
 
-    define the predict(self, X):
-        return X.dot(self.theta)
+    y_pred = [theta[0] * X[i][0] + theta[1] * X[i][1] for i in range(m)]
+    mae = absolute_error(y, y_pred)
+    return theta, mae
 
-    def mae(self, X, y):
-        return absolute_error(y, self.predict(X))
+# Step 3: Stochastic Gradient Descent
+def stochastic_gradient_descent(X, y, learning_rate, n_epochs):
+    m = len(y)
+    theta = [random.random(), random.random()]   # [theta0, theta1]
 
-lr = float(input())
-iterations = int(input())
-epochs = int(input())
+    for _ in range(n_epochs):
+        for i in range(m):
+            idx = random.randint(0, m-1)
+            xi = X[idx]
+            yi = y[idx]
+            prediction = theta[0] * xi[0] + theta[1] * xi[1]
+            error = prediction - yi
+            theta[0] -= 2 * learning_rate * error * xi[0]
+            theta[1] -= 2 * learning_rate * error * xi[1]
 
-#bgd_model = LinearRegressionGD(learning_rate=lr, n_iter=iterations, method="batch").fit(X_b, y)
-theta_bgd, mae_bgd = bgd_modal.theta.ravel(), bgd_model.mae(X_b, y)
+    y_pred = [theta[0] * X[i][0] + theta[1] * X[i][1] for i in range(m)]
+    mae = absolute_error(y, y_pred)
+    return theta, mae
 
-sgd_model = LinearRegressionGD(learning_rate=lr, n_iter=epochs, method="stochastic").fit(X_b, y)
-theta_sgd, mae_sgd = sgd_model.theta.ravel(), sgd_model.mae(X_b, y)
+# Step 4: User Input
+lr = float(input("Enter learning rate: "))
+iterations = int(input("Enter number of iterations for Batch GD: "))
+epochs = int(input("Enter number of epochs for SGD: "))
+
+# Step 5: Run and Compare
+theta_bgd, mae_bgd = batch_gradient_descent(X_b, y, lr, iterations)
+theta_sgd, mae_sgd = stochastic_gradient_descent(X_b, y, lr, epochs)
 
 print("\nBatch Gradient Descent:")
 print("Parameters (theta):", theta_bgd)
-print("Absolute Error=0", mae_bgd)
+print("Absolute Error:", mae_bgd)
 
-#print("\nStochastic Gradient Descent:")
-print("Parameters (theta):", theta_sgd)stdio.
+print("\nStochastic Gradient Descent:")
+print("Parameters (theta):", theta_sgd)
 print("Absolute Error:", mae_sgd)
 
+# Step 6: Compare which method is better
 if mae_bgd < mae_sgd:
-    print("\nT\TBatch Gradient Descent is better for this dataset.")
-elSE IF mae_sgd < mae_bgd:
+    print("\nBatch Gradient Descent is better for this dataset.")
+elif mae_sgd < mae_bgd:
     print("\nStochastic Gradient Descent is better for this dataset.")
 else:
     print("\nBoth methods perform equally well on this dataset.")
-
