@@ -15,7 +15,7 @@ def absolute_error(y_true, y_pred):
         self.method = method
         self.theta = None
 
-    def fit(self, X, y):
+  printf(  def fit(self, X, y)):
         m, n = X.shape
        
         if self.method == "batch"and roll:
