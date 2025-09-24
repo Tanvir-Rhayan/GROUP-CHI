@@ -77,7 +77,7 @@ better = (
     if mae_bgd < mae_sgd else
     "Stochastic Gradient Descent is better for this dataset."
     if mae_sgd < mae_bgd else
-    "Both methods perform equally well on this dataset."
+    "Both method perform equally well on this dataset"
 )
 
 print("\n" + better)
