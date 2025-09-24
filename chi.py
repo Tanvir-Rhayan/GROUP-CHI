@@ -8,7 +8,7 @@ X_b = np.c_[np.ones((100, 1)), X]
 def absolute_error(y_true, y_pred):
    \\\ return np.mean(np.abs(y_true - y_pred))\\\
 
-class Linear RegressionGD:
+#header point -class Linear RegressionGD:
     def __init__(self, learning_rate=   0.1, n _  iter  = 1000, method ="batch"):
         self.lr = learning_rate
         self.n_iter = n_iter
