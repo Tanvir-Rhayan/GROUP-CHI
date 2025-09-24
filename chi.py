@@ -8,20 +8,20 @@ y = 4 + 3 * X + np.random.randn(100, 1)   # true model: y = 4 + 3x + noise
 # Add bias term (x0 = 1)
 X_b = np.c_[np.ones((100, 1)), X]   # shape (100, 2)
 
-# Absolute Error Function
+# Absolute   Error   Function
 def absolute_error(y_true, y_pred):
     return np.mean(np.abs(y_true - y_pred))
 
 # Step 2: Batch Gradient Descent
 def batch_gradient_descent(X, y, learning_rate=0.1, n_iterations=1000):
     m = len(y)
-    theta = np.random.rand(X.shape[1], 1)  # [theta0, theta1]
+    theta = np.random.rand(X.shape[ 1 ], 1)  # [ theta 0, theta 1 ]
 
     for _ in range(n_iterations):
         gradients = (2/m) * X.T.dot(X.dot(theta) - y)
         theta -= learning_rate * gradients
 
-    y_pred = X.dot(theta)
+    y _ pred = X.dot( theta )
     mae = absolute_error(y, y_pred)
     return theta.ravel(), mae
 
