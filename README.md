@@ -107,25 +107,47 @@ The Python script `linear_regression_gd.py` is **well-structured and beginner-fr
 
 ---
 
-## Algorithm Explanation
+## 🔁 Algorithm Overview: Linear Regression using Gradient Descent Methods
 
-### Batch Gradient Descent (BGD):
+### 1. **Data Generation**
+- Generate 100 random `x` values in the range [0, 2].
+- Generate corresponding `y` values using the equation:  
+  `y = 4 + 3x + noise`, where noise is Gaussian-distributed.
+- Add a bias term (x₀ = 1) to each input for intercept learning.
 
-- Uses the **entire dataset** to calculate gradient each iteration.  
-- **Advantages**: Stable updates, predictable convergence.  
-- **Disadvantages**: Slow for large datasets, high memory usage.  
-- **Time Complexity**: O(n * m) per iteration (n = iterations, m = samples)  
-- **Space Complexity**: O(m) for storing the dataset and gradients  
+### 2. **Define Error Function**
+- **Mean Absolute Error (MAE)** is used to evaluate prediction quality:
+  \[
+  \text{MAE} = \frac{1}{n} \sum |y_{\text{true}} - y_{\text{pred}}|
+  \]
 
-### Stochastic Gradient Descent (SGD):
+### 3. **Batch Gradient Descent (BGD)**
+- Initialize weights `θ₀` and `θ₁` randomly.
+- For each iteration:
+  - Compute gradients for all samples.
+  - Update weights using:
+    \[
+    \theta_j := \theta_j - \frac{2}{m} \cdot \alpha \cdot \sum (\text{error} \cdot x_j)
+    \]
+- Predict outputs and compute MAE.
 
-- Uses **one random sample** per iteration.  
-- **Advantages**: Fast updates, memory efficient, suitable for online learning.  
-- **Disadvantages**: Noisy convergence, may oscillate around minimum.  
-- **Time Complexity**: O(n * 1) per sample per iteration → faster than BGD for large datasets  
-- **Space Complexity**: O(1) per sample  
+### 4. **Stochastic Gradient Descent (SGD)**
+- Initialize weights `θ₀` and `θ₁` randomly.
+- For each epoch:
+  - Randomly pick a sample and update weights immediately using its error.
+- Predict outputs and compute MAE.
 
----
+### 5. **User Inputs**
+- Accept:
+  - Learning rate (α)
+  - Iterations for BGD
+  - Epochs for SGD
+
+### 6. **Evaluation & Comparison**
+- Output final parameters (`θ₀`, `θ₁`) and absolute error for both methods.
+- Compare BGD vs SGD based on MAE to determine the better method.
+
+
 
 ## Convergence Analysis
 
