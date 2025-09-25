@@ -58,7 +58,7 @@ J(\theta) = \frac{1}{2m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2
 \]
 
 **Image: Linear Regression Overview**  
-![Linear Regression Overview](2.webp)
+![Linear Regression Error](linear%20regression-error.jpg)
 
 ---
 
@@ -101,7 +101,8 @@ The Python script `linear_regression_gd.py` is **well-structured and beginner-fr
    - Helps visualize differences between BGD and SGD.  
 
 **Error Visualization**  
-![Linear Regression Error](linear%20regression-error.jpg)
+![Linear Regression Overview](2.webp)
+
 
 
 ---
