@@ -3,12 +3,12 @@
 **Group Number:** χ  
 
 **Group Members:**  
-- Mst. Maris Islam - 2024000000012  
-- Tanvir Rahyan Shayem - 2024000000035  
-- Md. Monjurul Haque Moni - 2024000000038  
-- Saykat Kumar Modak - 2023200000380  
-- Niaj Mahamud - 2023200000289  
-- Md. Golam Saroare Shuvo - 2022000000045  
+- Mst. Maris Islam -2024000000012  
+- Tanvir Rahyan Shayem -2024000000035  
+- Md. Monjurul Haque Moni -2024000000038  
+- Saykat Kumar Modak -2023200000380  
+- Niaj Mahamud -2023200000289  
+- Md. Golam Saroare Shuvo -2022000000045  
 
 **Submitted To:**  
 [TMD] Tashreef Muhammad, Lecturer, Dept. of CSE, Southeast University, Bangladesh  
