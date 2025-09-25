@@ -178,9 +178,6 @@ The Python script `linear_regression_gd.py` is **well-structured and beginner-fr
 ---
 
 ## How to Run
-
-### 1.
-````markdown
 ## 🚀 Getting Started
 
 Follow the steps below to clone and run this project on your local machine.
