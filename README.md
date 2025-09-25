@@ -181,4 +181,4 @@ The Python script `linear_regression_gd.py` is **well-structured and beginner-fr
 
 1. Clone the repository:  
 ```bash
-git clone <your-repo-url>
+git clone <[your-repo-url](https://github.com/Tanvir-Rhayan/GROUP-CHI.git)>
