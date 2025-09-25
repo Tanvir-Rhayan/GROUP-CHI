@@ -179,6 +179,45 @@ The Python script `linear_regression_gd.py` is **well-structured and beginner-fr
 
 ## How to Run
 
-1. Clone the repository:  
+### 1.
+````markdown
+## 🚀 Getting Started
+
+Follow the steps below to clone and run this project on your local machine.
+
+### 1. Clone the Repository
+Open your terminal and run:
 ```bash
-git clone <https://github.com/Tanvir-Rhayan/GROUP-CHI.git)](https://github.com/Tanvir-Rhayan/GROUP-CHI.git>
+git clone https://github.com/Tanvir-Rhayan/GROUP-CHI.git
+````
+
+### 2. Navigate into the Project Directory
+
+```bash
+cd GROUP-CHI
+```
+
+### 3. Install Dependencies (if required)
+
+If the project uses Python:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Code
+
+For Python:
+
+```bash
+python main.py
+```
+
+(Replace `main.py` with the actual entry file of this project.)
+
+---
+
+✅ Now your project should be up and running on your local machine!
+
+```
+
