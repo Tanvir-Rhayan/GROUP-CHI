@@ -101,7 +101,7 @@ The Python script `linear_regression_gd.py` is **well-structured and beginner-fr
    - Helps visualize differences between BGD and SGD.  
 
 **Error Visualization**  
-![Linear Regression Error](linear_regression-error.png)
+![Linear Regression Error](linear regression-error.jpg)
 
 ---
 
