@@ -58,6 +58,7 @@ lr = float(input("Enter learning rate: "))
 iterations = int(input("Enter number of iterations for Batch GD: "))
 epochs = int(input("Enter number of epochs for SGD: "))
 
+
 # Step 5: Run and Compare
 theta_bgd, mae_bgd = batch_gradient_descent(X_b, y, lr, iterations)
 theta_sgd, mae_sgd = stochastic_gradient_descent(X_b, y, lr, epochs)
